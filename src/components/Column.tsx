@@ -1,7 +1,7 @@
 "use client";
 
 import { Droppable } from "@hello-pangea/dnd";
-import { Job, Status } from "@/generated/prisma/client";
+import { Job, Status } from "@prisma/client";
 import { JobCard } from "./JobCard";
 
 interface Props {

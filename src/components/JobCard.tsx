@@ -1,7 +1,7 @@
 "use client";
 
 import { Draggable } from "@hello-pangea/dnd";
-import { Job, Status } from "@/generated/prisma/client";
+import { Job, Status } from "@prisma/client";
 import { deleteJob } from "@/lib/actions";
 import { useTransition } from "react";
 

@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { JobCard } from "@/components/JobCard";
-import { Job } from "@/generated/prisma/client";
+import { Job } from "@prisma/client";
 
 jest.mock("@/lib/actions", () => ({
   deleteJob: jest.fn(),

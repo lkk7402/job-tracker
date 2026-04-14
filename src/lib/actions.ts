@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/prisma";
-import { Status } from "@/generated/prisma/client";
+import { Status } from "@prisma/client";
 import { JobSchema } from "@/lib/validation";
 
 export type ActionResult =
