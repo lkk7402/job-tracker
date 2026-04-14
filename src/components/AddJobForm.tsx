@@ -74,6 +74,12 @@ export function AddJobForm() {
             />
           </div>
 
+          {state?.success === false && state.errors.form && (
+            <p className="text-sm text-red-600 bg-red-50 rounded-lg px-3 py-2">
+              {state.errors.form[0]}
+            </p>
+          )}
+
           <div className="flex gap-3 pt-1">
             <button
               type="button"

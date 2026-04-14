@@ -26,12 +26,20 @@ export async function createJob(
     return { success: false, errors: result.error.flatten().fieldErrors };
   }
 
-  await prisma.job.create({
-    data: {
-      ...result.data,
-      url: result.data.url || null,
-    },
-  });
+  try {
+    await prisma.job.create({
+      data: {
+        ...result.data,
+        url: result.data.url || null,
+      },
+    });
+  } catch (e) {
+    console.error("[createJob] DB error:", e);
+    return {
+      success: false,
+      errors: { form: [(e as Error).message ?? "Database error"] },
+    };
+  }
 
   revalidatePath("/");
   return { success: true };
